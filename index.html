@@ -1,1 +1,112 @@
-test
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API 文件</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h3 id="建立或更新採購商物料">建立或更新採購商物料</h3>
+<p>建立採購商物料，若已經存在，則進行更新</p>
+<h4 id="url">URL</h4>
+<pre><code>POST /partner-api/integration/v1/purchaser/purchaserItem
+</code></pre>
+<h4 id="request">Request</h4>
+<h5 id="輸入參數">輸入參數</h5>
+
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>必填</th>
+<th>型別</th>
+<th>長度</th>
+<th>說明</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sourceItemId</td>
+<td>Y</td>
+<td>string</td>
+<td>30</td>
+<td>來源系統的產品唯一識別編號。</td>
+<td>若CocoMart系統未存在該識別編號，則視為新增；若已存在，則進行資料更新。</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Y</td>
+<td>string</td>
+<td>150</td>
+<td>產品名稱</td>
+<td></td>
+</tr>
+<tr>
+<td>refNumber</td>
+<td>N</td>
+<td>string</td>
+<td>100</td>
+<td>供應商管理料號</td>
+<td></td>
+</tr>
+<tr>
+<td>spec</td>
+<td>N</td>
+<td>string</td>
+<td>30</td>
+<td>產品規格</td>
+<td></td>
+</tr>
+<tr>
+<td>category</td>
+<td>N</td>
+<td>string</td>
+<td>10</td>
+<td>產品類別</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>N</td>
+<td>string</td>
+<td>300</td>
+<td>產品敘述</td>
+<td></td>
+</tr>
+<tr>
+<td>unit</td>
+<td>N</td>
+<td>string</td>
+<td>10</td>
+<td>單位</td>
+<td></td>
+</tr>
+</tbody>
+</table><h5 id="request-範例">Request 範例</h5>
+<pre><code>{
+  "sourceProductId": 10001,
+  "name": "高麗菜",
+  "refNumber": "CCM001",
+  "spec": "5顆/箱",
+  "category ": "蔬菜",
+  "description": "高山高麗菜(門市用)",
+  "unit": "顆"
+}
+</code></pre>
+<h4 id="response">Response</h4>
+<h5 id="輸出參數">輸出參數</h5>
+<p>無</p>
+<h4 id="輸出範例">輸出範例</h4>
+<p>請求成功 HTTP Code 200</p>
+<pre><code>{
+  "data": {}
+}
+</code></pre>
+</div>
+</body>
+
+</html>
